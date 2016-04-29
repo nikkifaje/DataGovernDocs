@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Unique IDs &mdash; DataGovernDocs 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="DataGovernDocs 0.0.1 documentation" href="index.html" />
+    <link rel="prev" title="Tracking Records" href="TrackingRecords.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="unique-ids">
+<h1>Unique IDs<a class="headerlink" href="#unique-ids" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="3%" />
+<col width="6%" />
+<col width="25%" />
+<col width="33%" />
+<col width="2%" />
+<col width="4%" />
+<col width="2%" />
+<col width="2%" />
+<col width="8%" />
+<col width="4%" />
+<col width="4%" />
+<col width="6%" />
+<col width="3%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">UniqueID</th>
+<th class="head">Item</th>
+<th class="head">UnitDefinition</th>
+<th class="head">SQLDescription</th>
+<th class="head">Owner</th>
+<th class="head">Department</th>
+<th class="head">Type</th>
+<th class="head">Origin</th>
+<th class="head">Destination</th>
+<th class="head">DateAdded</th>
+<th class="head">Population</th>
+<th class="head">Population Missing</th>
+<th class="head">PrtClean</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>103</td>
+<td>NoApprovalCode</td>
+<td>Shows who approved the loan; helps to track underwriters</td>
+<td>APPROVALCODE = 0</td>
+<td>NULL</td>
+<td>Lending</td>
+<td>Loan</td>
+<td>DLC</td>
+<td>SymitarExtracts.dbo.LOAN</td>
+<td>1/1/2016 0:00</td>
+<td>NULL</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr class="row-odd"><td>104</td>
+<td>CreditLimitExpLOC</td>
+<td>LOC with no balance, credit limit, and credit limit expiration day &lt; present</td>
+<td>TYPE BETWEEN 5000 AND 5004  AND BALANCE = 0 AND CREDITLIMIT = 0 AND CREDLIMITEXPIRATION &lt; GETDATE()</td>
+<td>NULL</td>
+<td>Lending</td>
+<td>Loan</td>
+<td>DLC</td>
+<td>SymitarExtracts.dbo.LOAN</td>
+<td>1/1/2016 0:00</td>
+<td>NULL</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr class="row-even"><td>105</td>
+<td>CreditLimitExpOther</td>
+<td>Loans with no balance, credit limit, and credit limit expiration day &lt; present</td>
+<td>TYPE NOT BETWEEN 5000 AND 5004 AND BALANCE = 0 AND CREDITLIMIT = 0 AND CREDLIMITEXPIRATION &lt; GETDATE()</td>
+<td>NULL</td>
+<td>Lending</td>
+<td>Loan</td>
+<td>DLC</td>
+<td>SymitarExtracts.dbo.LOAN</td>
+<td>1/1/2016 0:00</td>
+<td>NULL</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr class="row-odd"><td>106</td>
+<td>MissingOrgFICO</td>
+<td>No FICO was recorded during loan organization</td>
+<td>BUREAUSCORE1 = 0 AND (a.TYPE not between 6000 and 6500)</td>
+<td>NULL</td>
+<td>Lending</td>
+<td>Loan</td>
+<td>DLC</td>
+<td>SymitarExtracts.dbo.LOAN</td>
+<td>1/1/2016 0:00</td>
+<td>NULL</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr class="row-even"><td>107</td>
+<td>NoLoanOpenDate</td>
+<td>No Open Date was recorded during loan organization</td>
+<td>OPENDATE IS NULL</td>
+<td>NULL</td>
+<td>Lending</td>
+<td>Loan</td>
+<td>DLC</td>
+<td>SymitarExtracts.dbo.LOAN</td>
+<td>1/1/2016 0:00</td>
+<td>NULL</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/Logo.jpg" alt="Logo"/>
+            </a></p><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="TrackingRecords.html" title="previous chapter">Tracking Records</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/UniqueIDs.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Business Intelligence.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/UniqueIDs.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
